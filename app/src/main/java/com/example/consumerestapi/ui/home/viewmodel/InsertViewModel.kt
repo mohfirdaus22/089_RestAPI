@@ -25,5 +25,5 @@ fun Kontak.toInsertUiEvent(): InsertUiEvent = InsertUiEvent(
     id = id,
     nama = nama,
     alamat = alamat,
-
+    nohp = noHp
 )
