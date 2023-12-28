@@ -1,6 +1,8 @@
 package com.example.consumerestapi.repository
 
 import com.example.consumerestapi.network.KontakService
+import com.example.restapi.repositori.KontakRepository
+import com.example.restapi.repositori.NetworkKontakRepository
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -21,7 +23,7 @@ class KontakContainer : AppContainer{
     private val kontakService : KontakService by lazy {
         retrofit.create(KontakService::class.java)
     }
-    override val kontakRepository : KontakRepository by lazy{
+    override val kontakRepository: KontakRepository by lazy{
         NetworkKontakRepository(kontakService)
     }
 }
