@@ -1,5 +1,7 @@
 package com.example.consumerestapi.ui.home.screen
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -12,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.consumerestapi.ui.PenyediaViewModel
 import com.example.pakeapi.ui.home.viewmodel.InsertUiEvent
@@ -61,5 +64,10 @@ fun FormInputSiswa(
     onValueChange : (InsertUiEvent) -> Unit = {},
     enabled: Boolean = true
 ){
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
 
+    }
 }
