@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.consumerestapi.ui.PenyediaViewModel
 import com.example.pakeapi.ui.home.viewmodel.InsertUiEvent
+import com.example.pakeapi.ui.home.viewmodel.InsertUiState
 import com.example.pakeapi.ui.home.viewmodel.InsertViewModel
 import kotlinx.coroutines.launch
 
@@ -111,4 +112,13 @@ fun FormInputSiswa(
             modifier = Modifier.padding(12.dp)
         )
     }
+}
+@Composable
+fun EntryKontakBody(
+    insertUiState: InsertUiState,
+    onSiswaValueChange: (InsertUiEvent) -> Unit,
+    onSaveClick: () -> Unit,
+    modifier: Modifier = Modifier
+){
+
 }
