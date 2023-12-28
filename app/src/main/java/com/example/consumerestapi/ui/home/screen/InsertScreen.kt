@@ -1,5 +1,9 @@
 package com.example.consumerestapi.ui.home.screen
 
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 
@@ -10,7 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.consumerestapi.ui.PenyediaViewModel
+import com.example.pakeapi.ui.home.viewmodel.InsertUiEvent
 import com.example.pakeapi.ui.home.viewmodel.InsertViewModel
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -21,7 +27,17 @@ fun EntryKontakScreen(
 ){
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
-    Scaffold(){
+    Scaffold(
+        modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        topBar = {
+            TopAppBarKontak(
+                title = DestinasiEntry.titleRes,
+                canNavigateBack = true,
+                scrollBehavior = scrollBehavior,
+                navigateUp = navigateBack
+            )
+        }
+    ){
             innerPadding ->
         EntryKontakBody(
             insertUiState = viewModel.insertkontakState,
@@ -37,4 +53,13 @@ fun EntryKontakScreen(
                 .fillMaxWidth()
         )
     }
+}
+@Composable
+fun FormInputSiswa(
+    insertUiEvent: InsertUiEvent,
+    modifier: Modifier = Modifier,
+    onValueChange : (InsertUiEvent) -> Unit = {},
+    enabled: Boolean = true
+){
+
 }
