@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.consumerestapi.model.Kontak
 import com.example.consumerestapi.repository.KontakRepository
+import com.example.restapi.repositori.KontakRepository
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
@@ -36,6 +37,17 @@ class HomeViewModel (private val kontakRepository: KontakRepository): ViewModel(
             }catch (e:IOException){
                 KontakUIState.Error
             }catch (e: HttpException){
+                KontakUIState.Error
+            }
+        }
+    }
+    fun deleteKontak(id: Int) {
+        viewModelScope.launch {
+            try {
+                kontakRepository.deleteKontak(id)
+            } catch (e: IOException) {
+                KontakUIState.Error
+            } catch (e: IOException) {
                 KontakUIState.Error
             }
         }
