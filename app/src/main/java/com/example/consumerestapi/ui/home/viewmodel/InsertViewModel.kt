@@ -1,8 +1,17 @@
 package com.example.pakeapi.ui.home.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
 import com.example.consumerestapi.model.Kontak
+import com.example.restapi.repositori.KontakRepository
 
+class InsertViewModel(private val kontakRepository: KontakRepository) : ViewModel() {
+    var insertKontakState by mutableStateOf(InsertUiState())
+        private set
 
+}
 data class InsertUiEvent(
     val id: Int = 0,
     val nama: String = "",
