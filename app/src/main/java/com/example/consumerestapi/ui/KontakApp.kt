@@ -73,5 +73,14 @@ fun TopAppBar(
 fun TopAppBar(
     scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier
 ){
-
+    CenterAlignedTopAppBar(
+        scrollBehavior = scrollBehavior,
+        title = {
+            Text(
+                text = stringResource(id = R.string.app_name),
+                style = MaterialTheme.typography.headlineSmall
+            )
+        },
+        modifier = modifier
+    )
 }
