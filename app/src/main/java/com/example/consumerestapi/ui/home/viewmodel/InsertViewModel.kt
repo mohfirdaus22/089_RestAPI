@@ -27,3 +27,6 @@ fun Kontak.toInsertUiEvent(): InsertUiEvent = InsertUiEvent(
     alamat = alamat,
     nohp = noHp
 )
+fun Kontak.toUiStateKontak(): InsertUiState = InsertUiState(
+    insertUiEvent = toInsertUiEvent()
+)
