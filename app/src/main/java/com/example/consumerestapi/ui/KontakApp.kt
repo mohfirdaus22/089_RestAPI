@@ -44,13 +44,13 @@ fun KontakApp (
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBar(
+fun TopAppBarKontak(
     title: String,
     canNavigateBack: Boolean,
     modifier: Modifier = Modifier,
     scrollBehavior: TopAppBarScrollBehavior? = null,
     navigateUp: () -> Unit = {}
-){
+) {
     CenterAlignedTopAppBar(
         title = { Text(title) },
         modifier = modifier,

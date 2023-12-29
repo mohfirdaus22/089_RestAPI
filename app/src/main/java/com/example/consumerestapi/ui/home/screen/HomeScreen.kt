@@ -30,6 +30,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.consumerestapi.R
 import com.example.consumerestapi.model.Kontak
+import com.example.consumerestapi.navigasi.DestinasiNavigasi
 import com.example.consumerestapi.ui.home.viewmodel.KontakUIState
 
 @Composable
@@ -124,4 +125,8 @@ fun KontakCard(
             )
         }
     }
+}
+object DestinasiHome : DestinasiNavigasi {
+    override val route = "home"
+    override val titleRes = "Kontak"
 }
